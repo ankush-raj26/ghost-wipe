@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Privacy Delete"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Makes already-deleted files unrecoverable. Your current files are never touched."
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/storageInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="15sp" />
+
+        <!-- STEP 1 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Step 1 — Empty the trash"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Deleted photos often still sit in a 30-day trash. This permanently removes photos/videos in the system trash (Android 11+).\n\nAlso empty these by hand, the app can't reach them:\n• Google Photos → Library → Bin → Empty\n• Samsung/Xiaomi Gallery → Recycle bin → Empty\n• WhatsApp/Telegram media you deleted in-chat"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnTrash"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Empty system trash" />
+
+        <!-- STEP 2 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Step 2 — Wipe free space"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Fills all free space with junk, then deletes the junk. Leftovers of deleted files get overwritten.\n\nWhile it runs, the phone will be almost full: don't take photos or download files until it finishes. Keep the phone charging if you can."
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnWipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Start wipe" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Cancel" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="@android:style/Widget.DeviceDefault.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:max="1000" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="monospace"
+            android:textSize="14sp" />
+
+        <!-- STEP 3: RECOVERY CHECK -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Recovery check (proof)"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Scans the phone the way recovery apps do (trash, recycle bins, thumbnail caches, hidden photos).\n\nProof test:\n1. Create test photo (it goes to the trash, like a normal delete)\n2. Scan → test photo should be FOUND\n3. Run Step 1 and Step 2 above\n4. Scan again → test photo should be GONE"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnAllFiles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Allow full scan (All files access)" />
+
+        <Button
+            android:id="@+id/btnProof"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create test photo &amp; delete it" />
+
+        <Button
+            android:id="@+id/btnScan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scan like a recovery app" />
+
+        <Button
+            android:id="@+id/btnDeleteLeftovers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Delete found leftovers" />
+
+        <TextView
+            android:id="@+id/scanResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="monospace"
+            android:textIsSelectable="true"
+            android:textSize="13sp" />
+    </LinearLayout>
+</ScrollView>
